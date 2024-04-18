@@ -1,48 +1,122 @@
-import { Button } from "@/components/ui/button"
-import { ChevronDownIcon } from "@radix-ui/react-icons"
+import { motion } from 'framer-motion';
+import Title from './components/Title';
+import ButtonR from './components/buttonR';
+import Paragraph from './components/paragraph';
+import Cloud from './components/cloud';
+
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 function App() {
   return (
-    <div className="overflow-hidden bg-sky-100 flex flex-col relative">
+    <div className="overflow-hidden bg-sky-100 flex flex-col relative z-0">
       <div className="w-screen h-screen flex justify-center items-center">
         <div className="flex">
           <div>
-          <img className="animate-fade animate-infinite animate-duration-[3ms] animate-delay-0 animate-normal absolute top-0 left-0  object-cover opacity-75" src="nuvem.png"/>
-
-          <img className="absolute top-0 right-0 object-cover opacity-75" src="nuvem.png"/>
+            <Cloud src="nuvem.png" alt="nuvem" style={{top: "-150px"}} delay={2} ></Cloud>
+            <Cloud src="nuvem.png" alt="nuvem" style={{top: "150px"}} delay={6}></Cloud>
+            <Cloud src="nuvem.png" alt="nuvem" style={{top: "350px"}} delay={0}></Cloud>
+            <Cloud src="nuvem.png" alt="nuvem" style={{top: "-80px"}} delay={18} ></Cloud>
+            <Cloud src="nuvem.png" alt="nuvem" style={{top: "0px"}} delay={10}></Cloud>
+            <Cloud src="nuvem.png" alt="nuvem" style={{top: "500px"}} delay={15}></Cloud>
           </div>
           <div>
-            <img className=" w-80 h-96 rounded-xl" src="avelino.png" alt="Avelino" />
+          <Avatar className='w-80 h-96 z-10'>
+            <AvatarImage src="avelino.png" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
           </div>
           <div className="flex justify-around flex-col gap-12">
             <div className="flex flex-col gap-10 ml-10 items-center">
-              <h1 className="text-5xl font-bold">Felipe Silva Avelino</h1>
-              <p className="mt-2">Especializado em História, Sociedade e Cultura pela PUC-SP em 2008</p>
+              <Title></Title>
+              <Paragraph></Paragraph>
             </div>
             <div className="flex justify-center items-center">
               <a href="#about-me">
-                <Button className="animate-bounce h-15 w-40 bg-red-400 bg-gradient-to-r rounded-xl relative flex h-[50px] items-center justify-center overflow-hidden font-medium text-white transition-all duration-1000 before:absolute before:inset-0 before:border-0 before:border-white before:duration-100 before:ease-linear hover:bg-white hover:text-red-400 hover:before:border-[25px]" >
-                  <span className="flex relative z-10">
-                    Sobre Mim <ChevronDownIcon className="mt-0.5 ml-4"/>
-                  </span>
-                </Button> 
+                <ButtonR></ButtonR> 
               </a>
             </div>
           </div>
         </div>
       </div>
+      <motion.img 
+        initial={{ opacity: 0, x: "-100vw" }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 2, delay: 0.1 }}
+        className="absolute bottom-0 ml-[-220px] transform scale-x-[-1]"
+        src="houses/predio.png"
+        alt="Favela"
+        width={350}
+      />
+      <motion.img
+        initial={{ opacity: 0, x: "-100vw" }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 2, delay: 0.2 }}
+        className="absolute bottom-0 ml-[-45px]"
+        src="houses/casasEscadas.png"
+        alt="Favela"
+        width={350}
+      />
+      <motion.img
+        initial={{ opacity: 0, x: "-100vh" }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 2, delay: 0.5 }}
+        className="absolute bottom-0 ml-[190px]"
+        src="houses/vendas.png"
+        alt="Favela"
+        width={350}
+      />
+      <motion.img
+        initial={{ opacity: 0, x: "-100vh" }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 2, delay: 0.3 }}
+        className="absolute bottom-0 ml-[90px]"
+        src="houses/casaDupla.png"
+        alt="Favela"
+        width={300}
+      />
 
-      <img className="absolute bottom-0 left-[-230px] transform scale-x-[-1]" src="houses/predio.png" alt="Favela" width={350} />
-      <img className="absolute bottom-0 ml-[200px]" src="houses/casasEscadas.png" alt="Favela" width={350} />
-      <img className="absolute bottom-0" src="houses/vendas.png" alt="Favela" width={350} />
-      <img className="absolute bottom-0 ml-[150px]" src="houses/casaDupla.png" alt="Favela" width={300} />
 
-      <img className="absolute bottom-0 right-[-230px]" src="houses/vendas.png" alt="Favela" width={350} />
-      <img className="absolute bottom-0 right-[180px] transform scale-x-[-1]" src="houses/vendinha.png" alt="Favela" width={350} />
-      <img className="absolute bottom-0 right-0 transform scale-x-[-1]" src="houses/predio.png" alt="Favela" width={350} />
-      <img className="absolute bottom-0 right-[100px] transform scale-x-[-1]" src="houses/casaVaranda.png" alt="Favela" width={300} />
+      <motion.img 
+        initial={{ opacity: 0, x: "100vw" }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 2, delay: 0.1 }}
+        className="absolute bottom-0 right-[-230px]"
+        src="houses/vendas.png"
+        alt="Favela"
+        width={350}
+      />
+      <motion.img
+        initial={{ opacity: 0, x: "100vh" }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 2, delay: 0.5 }}
+        className="absolute bottom-0 right-[250px]"
+        src="houses/vendinha.png"
+        alt="Favela"
+        width={350}
+      />
+      <motion.img
+        initial={{ opacity: 0, x: "100vh" }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 2, delay: 0.2 }}
+        className="absolute bottom-0 right-[-30px] "
+        src="houses/predioL.png"
+        alt="Favela"
+        width={350}
+      />
+      <motion.img
+        initial={{ opacity: 0, x: "100vh" }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 2, delay: 0.3 }}
+        className="absolute bottom-0 right-[100px]"
+        src="houses/casaVaranda.png"
+        alt="Favela"
+        width={300}
+      />
+      <div>
+      
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
