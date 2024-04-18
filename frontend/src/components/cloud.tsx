@@ -19,7 +19,7 @@ const Cloud: React.FC<ImgProps> = ({ src, alt, style, delay = 0 }) => {
         x: ["100vw", "-100vw"],
       }}
       transition={{
-        duration: 70,
+        duration: 50,
         ease: "linear",
         delay: delay,
         repeat: Infinity

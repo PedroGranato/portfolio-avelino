@@ -1,7 +1,5 @@
 import { motion } from 'framer-motion';
-import Title from './components/Title';
 import ButtonR from './components/buttonR';
-import Paragraph from './components/paragraph';
 import Cloud from './components/cloud';
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -9,8 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 function App() {
   return (
     <div className="overflow-hidden bg-sky-100 flex flex-col relative z-0">
-      <div className="w-screen h-screen flex justify-center items-center">
-        <div className="flex">
+      <div className="w-screen h-screen flex justify-center items-center gap-10">
           <div>
             <Cloud src="nuvem.png" alt="nuvem" style={{top: "-150px"}} delay={2} ></Cloud>
             <Cloud src="nuvem.png" alt="nuvem" style={{top: "150px"}} delay={6}></Cloud>
@@ -20,15 +17,14 @@ function App() {
             <Cloud src="nuvem.png" alt="nuvem" style={{top: "500px"}} delay={15}></Cloud>
           </div>
           <div>
-          <Avatar className='w-80 h-96 z-10'>
-            <AvatarImage src="avelino.png" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
+              <Avatar className='w-[200px] h-[200px] z-10'>
+                <AvatarImage src="avelino.png" />
+              </Avatar>
           </div>
           <div className="flex justify-around flex-col gap-12">
-            <div className="flex flex-col gap-10 ml-10 items-center">
-              <Title></Title>
-              <Paragraph></Paragraph>
+            <div className="flex flex-col gap-10 items-center">
+              <h1 className="text-5xl font-bold mb-4 z-10">Felipe Silva Avelino</h1>
+              <p className="mt-2 z-10">Especializado em História, Sociedade e Cultura pela PUC-SP em 2008</p>
             </div>
             <div className="flex justify-center items-center">
               <a href="#about-me">
@@ -36,7 +32,6 @@ function App() {
               </a>
             </div>
           </div>
-        </div>
       </div>
       <motion.img 
         initial={{ opacity: 0, x: "-100vw" }}
